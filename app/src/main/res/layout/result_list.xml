@@ -27,12 +27,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:layout_marginTop="5dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:text="뉴스 타이틀"
             android:textStyle="bold"
-            android:linksClickable="true"
-            android:autoLink="web"
             android:textColorLink="#2C2C2C"/>
 
         <TextView
@@ -42,8 +41,6 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:text="뉴스 내용"
-            android:linksClickable="true"
-            android:autoLink="web"
             android:textColorLink="#2C2C2C"/>
 
         <TextView

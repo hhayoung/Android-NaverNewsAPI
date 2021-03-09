@@ -1,7 +1,12 @@
 package com.example.projectnavernews;
 
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.text.Html;
+import android.text.method.LinkMovementMethod;
+import android.text.util.Linkify;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +16,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+
+import static android.net.Uri.*;
+import static android.text.Html.fromHtml;
 
 public class MainAdapter extends RecyclerView.Adapter<MainAdapter.CustomViewHolder> {
 
@@ -44,9 +52,11 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.CustomViewHold
             @Override
             public void onClick(View view) {
                 // 링크로 넘어가야 함.
-//                String url = holder.tv_link.getText().toString();
-//                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
-//                startActivity(intent);
+                Context context = view.getContext();
+                String url = holder.tv_link.getText().toString();
+//                Log.e("url", url);
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                context.startActivity(intent);
             }
         });
     }

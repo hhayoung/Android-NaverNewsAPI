@@ -196,7 +196,7 @@ public class MainActivity extends AppCompatActivity {
             for(int i=0;i<array.length;i++) {
                 if (array[i].equals("title")) {
 //                    Log.e("i값", String.valueOf(i));
-                    result_data[k][0] = array[i+2].replaceAll("<(/)?([a-zA-Z]*)(\\\\s[a-zA-Z]*=[^>]*)?(\\\\s)*(/)?>", "");
+                    result_data[k][0] = array[i+2].replaceAll("<(/)?([a-zA-Z]*)(\\\\s[a-zA-Z]*=[^>]*)?(\\\\s)*(/)?>", "").replaceAll("&quot;","\"");
 //                    Log.e("title 값", array[i+2]);
                 }
                 if (array[i].equals("link")) {
@@ -204,7 +204,7 @@ public class MainActivity extends AppCompatActivity {
 //                    Log.e("link 값", array[i+2]);
                 }
                 if (array[i].equals("description")) {
-                    result_data[k][1] = array[i+2].replaceAll("<(/)?([a-zA-Z]*)(\\\\s[a-zA-Z]*=[^>]*)?(\\\\s)*(/)?>", "");
+                    result_data[k][1] = array[i+2].replaceAll("<(/)?([a-zA-Z]*)(\\\\s[a-zA-Z]*=[^>]*)?(\\\\s)*(/)?>", "").replaceAll("&quot;","\"");
 //                    Log.e("description 값", array[i+2]);
                     k++;
                 }
