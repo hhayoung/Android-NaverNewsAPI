@@ -1,5 +1,7 @@
 package com.example.projectnavernews;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,8 +33,10 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.CustomViewHold
     @Override
     public void onBindViewHolder(@NonNull CustomViewHolder holder, int position) {
         // 실제 추가될 때
+        holder.tv_rank.setText(arrayList.get(position).getTv_rank());
         holder.tv_title.setText(arrayList.get(position).getTv_title());
         holder.tv_content.setText(arrayList.get(position).getTv_content());
+        holder.tv_link.setText(arrayList.get(position).getTv_link());
 
         // 리스트뷰 클릭했을 때
         holder.itemView.setTag(position);
@@ -40,6 +44,9 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.CustomViewHold
             @Override
             public void onClick(View view) {
                 // 링크로 넘어가야 함.
+//                String url = holder.tv_link.getText().toString();
+//                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+//                startActivity(intent);
             }
         });
     }
@@ -51,13 +58,17 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.CustomViewHold
 
     public class CustomViewHolder extends RecyclerView.ViewHolder {
 
+        protected TextView tv_rank;
         protected TextView tv_title;
         protected TextView tv_content;
+        protected TextView tv_link;
 
         public CustomViewHolder(@NonNull View itemView) {
             super(itemView);
+            this.tv_rank = (TextView)itemView.findViewById(R.id.tv_rank);
             this.tv_title = (TextView)itemView.findViewById(R.id.tv_title);
             this.tv_content = (TextView)itemView.findViewById(R.id.tv_content);
+            this.tv_link = (TextView)itemView.findViewById(R.id.tv_link);
         }
     }
 }
