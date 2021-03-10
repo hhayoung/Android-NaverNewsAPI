@@ -1,4 +1,4 @@
-package com.example.projectnavernews;
+package com.example.recyclerviewnavernewsapi;
 
 import org.junit.Test;
 

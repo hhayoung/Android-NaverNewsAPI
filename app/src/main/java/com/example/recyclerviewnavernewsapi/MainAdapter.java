@@ -1,12 +1,8 @@
-package com.example.projectnavernews;
+package com.example.recyclerviewnavernewsapi;
 
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.text.Html;
-import android.text.method.LinkMovementMethod;
-import android.text.util.Linkify;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,7 +13,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-import static android.net.Uri.*;
 import static android.text.Html.fromHtml;
 
 public class MainAdapter extends RecyclerView.Adapter<MainAdapter.CustomViewHolder> {
